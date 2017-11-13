@@ -15,6 +15,6 @@ window.onload = () => {
         {/* <Route path="/write" component={ThreadForm} /> */}
       </div>
     </HashRouter>,
-    document.getElementById('app')
+    document.getElementById('content-div')
   )
 }

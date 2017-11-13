@@ -4,7 +4,7 @@ export default class ThreadList extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state: {
+    this.state = {
       threads: [
         {
           title: "Test",
@@ -13,7 +13,7 @@ export default class ThreadList extends React.Component {
           comments: [
             {
               author: "Also Dan",
-              text: "A test comment."
+              text: "A test comment.",
               comments: []
             },
             {
@@ -37,6 +37,28 @@ export default class ThreadList extends React.Component {
         }
       ]
     }
+  }
+
+  render() {
+
+    var counter = 0
+
+    const threadDisplay = this.state.threads.map( thread => {
+      return (
+        <div id="thread-list-item" key={counter++}>
+          <h3>{thread.title}</h3>
+          <p>{thread.author}</p>
+        </div>
+      )
+    })
+
+    console.log(threadDisplay);
+
+    return (
+      <div id="thread-list">
+        {threadDisplay}
+      </div>
+    )
   }
 
 
